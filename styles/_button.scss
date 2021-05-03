@@ -1,0 +1,13 @@
+input[type="submit"], button {
+    background-color: $colorPrimary;
+    color: white;
+    border: solid thin $colorPrimary;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    transition: linear 150ms;
+
+    &:hover, &:focus, &:active {
+        background-color: $colorDark;
+        border-color: $colorDark;
+    }
+}

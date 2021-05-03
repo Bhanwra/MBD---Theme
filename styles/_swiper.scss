@@ -1,0 +1,15 @@
+.swiper-container {
+
+    // nav buttons
+    .swiper-button-next:after, .swiper-button-prev:after {
+        color: #ddd;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        background-color: white;
+    }
+}

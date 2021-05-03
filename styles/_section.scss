@@ -1,0 +1,28 @@
+section {
+
+    .section-heading {
+        text-align: center;
+    }
+}
+
+section.coming-soon {
+    background-image: url('https://cdn.shopify.com/s/files/1/0513/8081/3974/files/st-clair_1.jpg?v=1617945511');
+    min-height: 70vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    h2 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        color: black;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 1em;
+        text-transform: uppercase;
+    }
+}

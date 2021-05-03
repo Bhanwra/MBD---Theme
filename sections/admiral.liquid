@@ -1,0 +1,112 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.js' | asset_url | script_tag }}
+
+<!-- Slider main container -->
+<input type="checkbox" hidden class="d-none swipper-toggle" id="swipper-toggle" />
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <label class="swipper-close" for="swipper-toggle">&Cross;</label>
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        {% for block in section.blocks %}
+            {% if block.type == "screens" %}
+                <div class="swiper-slide">
+                    <img src="{{ block.settings.screen | img_url: '960x' }}" alt="">
+                </div>
+            {% endif %}
+        {% endfor %}
+        ...
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+
+<div class="row">
+    <div class="col-12 p-4">
+        <h2 class="text-uppercase text-center">
+            {{ section.settings.project-title }}
+        </h2>
+    </div>
+    <div class="col-12 offset-md-2 col-md-8">
+        <div class="row">
+            {% for block in section.blocks %}
+                {% if block.type == "screens" %}
+                    <div class="mb-4 col-12 col-md-6 {% if block.settings.screen-full-width %}col-md-12{% endif %}">
+                        <div class="project-screen" style="background-image: url({{ block.settings.screen | img_url: '960x' }})" onclick="loadSlide({{ forloop.index }})"></div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+const swiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+        el: '.swiper-scrollbar',
+    },
+});
+
+function loadSlide(index) {
+    swiper.slideTo(index)
+
+    document.getElementById('swipper-toggle').checked = true
+}
+</script>
+
+{% schema %}
+    {
+        "name": "Project",
+        "class": "project container-fluid",
+        "settings": [
+            {
+                "type": "text",
+                "id": "project-title",
+                "label": "Project Title",
+                "default": "Admiral"
+            }
+        ], "blocks": [
+            {
+                "type": "screens",
+                "name": "Screenshot",
+                "settings":[
+                    {
+                        "type": "image_picker",
+                        "id": "screen",
+                        "label": "Select Image"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "screen-full-width",
+                        "label": "Full Width",
+                        "default": false,
+                        "info": "Select to make the screenshot wider"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

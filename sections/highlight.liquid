@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-12 text-center p-4">
+        <h3 class="h3">{{ section.settings.title }}</h3>
+        <a href="{{ section.settings.url }}">view project</a>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Highlight Project",
+        "tag": "section",
+        "class": "container",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Highlight Title",
+                "info": "Enter title to display",
+                "placeholder": "Enter title"
+            },
+            {
+                "type": "url",
+                "id": "url",
+                "label": "Target page",
+                "info": "Select target page"
+            }
+        ]
+    }
+{% endschema %}

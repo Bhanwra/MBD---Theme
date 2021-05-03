@@ -1,0 +1,121 @@
+{% comment %} <div class="nav-mobile d-md-none d-block">
+    <i class="las la-bars"></i>
+    <div class="nav-mobile-backdrop"></div>
+    <div class="nav-mobile-menu">
+        {% for item in linklists[section.settings.nav-link-list].links %}
+            {% assign subLinksCount = item.links | size %}
+
+            {% if subLinksCount > 0 %}
+            <label for="mega-menu-{{ item.handle }}"><a href="javascript:void(0)" class="nav-link {% if item.active %}active{% endif %}">{{ item.title }}</a></label>
+            {% else %}
+            <a href="#">{{ item.title }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div> {% endcomment %}
+
+<div class="brand">
+    <a href="{{ shop.url }}">
+        {% comment %} {% if section.settings.logo %}
+            <img class="d-inline d-md-none w-75" src="https://cdn.shopify.com/s/files/1/0513/8081/3974/files/logo_abbrv.png?v=1612513302" alt="">
+            <img class="d-none d-md-inline" src="{{ section.settings.logo | img_url: 'large' }}" />
+        {% else %}
+            <img src="https://cdn.shopify.com/s/files/1/0513/8081/3974/files/logo_v2_medium.png?v=1611348357" />
+        {% endif %} {% endcomment %}
+        <img src="{{ section.settings.logo | img_url: '480x' }}" />
+    </a>
+</div>
+
+<div class="nav justify-content-end d-lg-none">
+    <label for="nav-mobile"><i class="las la-bars"></i></label>
+    <input type="checkbox" class="d-none nav-mobile-toggle" id="nav-mobile">
+    <nav class="nav-mobile">
+        <div class="nav-mobile-close">
+            <label for="nav-mobile"><i class="las la-times"></i></label>
+        </div>
+        <div class="nav-mobile-links">
+            {% for item in linklists[section.settings.nav-link-list].links %}
+
+                {% assign subLinksCount = item.links | size %}
+
+                {% if subLinksCount > 0 %}
+                    <div class="nav-mobile-sub-menu">
+                        <label for="sub-menu-{{ item.handle }}" class="sub-menu-title"><a class="nav-link {% if item.active %}active{% endif %}">{{ item.title }}</a></label>
+                        <input type="checkbox" class="sub-menu-toggle d-none" id="sub-menu-{{ item.handle }}" />
+                        <div class="sub-menu">
+                            {% for subLink in item.links %}
+                                <a href="{{ subLink.url }}">{{ subLink.title }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% else %}
+                    <a href="{{ item.url }}" class="nav-link {% if item.active %}active{% endif %}">{{ item.title }}</a>
+                {% endif %}
+
+
+            {% endfor %}
+        </div>
+    </nav>
+</div>
+
+<div class="nav justify-content-end d-none d-lg-flex">
+    {% for item in linklists[section.settings.nav-link-list].links %}
+
+        {% assign subLinksCount = item.links | size %}
+
+        {% if subLinksCount > 0 %}
+            <input type="checkbox" name="mega-menu-toggle" id="mega-menu-{{ item.handle }}" class="mega-menu-toggle d-none" hidden />
+            <div class="mega-menu-container">
+                <label for="mega-menu-{{ item.handle }}" class="mega-menu-close">&Cross;</label>
+                <label for="mega-menu-{{ item.handle }}" class="mega-menu-backdrop"></label>
+                <div class="mega-menu-title">
+                    {{ item.title }}
+                </div>
+                <div class="mega-menu">
+                    {% for subLink in item.links %}
+                        <a href="{{ subLink.url }}">{{ subLink.title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <li class="nav-item has-mega-menu">
+                {% if item.handle == "menu" %}
+                    <label for="mega-menu-{{ item.handle }}" class="m-0"><a href="javascript:void(0)" class="nav-link {% if item.active %}active{% endif %}"><i class="las la-bars" style="font-size: 1.5rem;"></i></a></label>
+                {% else %}
+                    <label for="mega-menu-{{ item.handle }}" class="m-0"><a href="javascript:void(0)" class="nav-link {% if item.active %}active{% endif %}">{{ item.title }}</a></label>
+                {% endif %}
+            </li>
+
+        {% else %}
+            <li class="nav-item">
+                <a href="{{ item.url }}" class="nav-link {% if item.active %}active{% endif %}">{{ item.title }}</a>
+            </li>
+        {% endif %}
+
+    {% endfor %}
+</div>
+
+<div class="cart d-none">
+    <a href="#" class="cart-link"><i class="las la-shopping-bag"></i></a>
+</div>
+
+{% schema %}
+    {
+        "name": "Header",
+        "tag": "header",
+        "class": "container-fluid header header-center",
+        "settings": [
+            {
+                "type": "link_list",
+                "id": "nav-link-list",
+                "label": "Navigation Menu for Header",
+                "default": "main-menu"
+            },
+            {
+                "type": "image_picker",
+                "id": "logo",
+                "label": "Logo"
+            }
+        ]
+    }
+{% endschema %}

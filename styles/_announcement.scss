@@ -1,0 +1,18 @@
+.announcement {
+    background-color: $backgroundAccent;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .announcement-message {
+            margin: 0.5rem 0;
+            padding: 0;
+            font-size: $fontS;
+            text-transform: uppercase;
+            letter-spacing: $letterSpacing;
+            color: $colorDark;
+        }
+    }
+}

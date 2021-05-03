@@ -1,0 +1,27 @@
+{% if section.settings.show-message %}
+    <p class="message-text">{{ section.settings.message }}</p>
+{% endif %}
+
+{% schema %}
+    {
+        "name": "Owner's Message",
+        "class": "message-container",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "checkbox",
+                "id": "show-message",
+                "label": "Show Message",
+                "default": true,
+                "info": "Uncheck if you do not want to display a message."
+            },
+            {
+                "type": "text",
+                "id": "message",
+                "label": "Message",
+                "info": "Enter Message to display",
+                "placeholder": "Enter message"
+            }
+        ]
+    }
+{% endschema %}

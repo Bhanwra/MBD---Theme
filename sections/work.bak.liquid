@@ -1,0 +1,57 @@
+{% assign rowSpan = 12 | divided_by: section.settings.rows %}
+
+<div class="container-fluid">
+    <div class="row col-md-10 offset-md-1 px-5">
+        <h2 class="section-heading text-left mx-3 fancy-heading">Projects</h2>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="card-list row col-md-10 offset-md-1">
+        {% for block in section.blocks %}
+            {% if block.type == "project" %}
+                {% render 'card' rows: rowSpan, card_title: block.settings.project-title, card_background: block.settings.project-thumbnail %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Work",
+        "class": "section",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "range",
+                "id": "rows",
+                "min": 1,
+                "max": 4,
+                "step": 1,
+                "label": "Items per Row",
+                "default": 3
+            }
+        ],
+        "blocks":[
+            {
+                "type": "project",
+                "name": "Project",
+                "settings":[
+                    {
+                        "type": "text",
+                        "id": "project-title",
+                        "label": "Title",
+                        "default": "Title",
+                        "placeholder": "Enter title"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "project-thumbnail",
+                        "label": "Thumbnail"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

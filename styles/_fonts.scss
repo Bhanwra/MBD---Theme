@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+// @font-face {
+//     font-family: 'MBDFont';
+//     src: url(./../assets/JosefinSans-Light.ttf);
+// }
+
+// @font-face {
+//     font-family: 'MBDBold';
+//     src: url(./../assets/JosefinSans-VariableFont_wght.ttf);
+// }
+
+// @font-face {
+//     font-family: 'MBDFancy';
+//     src: url(./../assets/ReenieBeanie-Regular.ttf);
+// }
+
+.fancy-heading {
+    font-size: 2em;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300 !important;
+}

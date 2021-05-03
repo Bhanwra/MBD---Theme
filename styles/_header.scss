@@ -1,0 +1,141 @@
+.header {
+    display: grid;
+    grid-template-areas: 
+        "brand nav nav nav cart"
+        ;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    padding: $unit (2.5 * $unit);
+    background-color: $backgroundLight;
+
+    &.header-center {
+        grid-template-areas: 
+        "brand nav nav"
+        ;
+        grid-template-columns: repeat(3, 1fr);
+
+        .nav {
+            justify-content: flex-start;
+        }
+    }
+
+    // _children_
+    .brand {
+        grid-area: brand;
+        padding: 1rem 0;
+        text-align: left;
+
+        img {
+            width: 480px;
+            max-width: 100%;
+        }
+
+        span {
+            font-weight: lighter;
+            letter-spacing: $letterSpacing;
+            font-size: $fontS;
+        }
+
+        a {
+            text-decoration: none;
+
+            .brand-text {
+                text-transform: uppercase;
+                font-size: 1.5rem;
+                letter-spacing: 0.1em;
+                font-weight: 300;
+            }
+        }
+
+    }
+
+    .nav {
+        grid-area: nav;
+        justify-content: center;
+
+        .nav-item {
+
+            .nav-link {
+                text-transform: uppercase;
+                letter-spacing: $letterSpacing;
+                font-size: $fontS;
+                color: $colorDark;
+                font-weight: 400;
+
+                &:hover {
+                    color: $colorPrimary;
+                }
+
+                &.active {
+                    color: $colorPrimary;
+                }
+            }
+        }
+    }
+
+    .nav-mobile {
+        grid-area: nav-mobile;
+
+        .nav-mobile-backdrop {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+            backdrop-filter: blur(100px);
+            background-color: #00000088;
+        }
+
+        .nav-mobile-menu {
+            position: fixed;
+            top: 0;
+            background-color: snow;
+            left: 0;
+            height: 100%;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+
+            a {
+                padding: 1rem;
+                min-width: 240px;
+            }
+        }
+    }
+
+    .cart {
+        grid-area: cart;
+        display: flex;
+        justify-content: flex-end;
+
+        .cart-link {
+            text-transform: uppercase;
+            letter-spacing: $letterSpacing;
+            font-size: $fontM;
+            color: $colorDark;
+            text-decoration: none;
+
+            &:hover {
+                color: $colorPrimary;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1026px) {
+    .header {
+        padding: $unit;
+
+        &.header-center {
+            grid-template-areas: 
+            "brand brand nav"
+            ;
+            grid-template-columns: repeat(3, 1fr);
+    
+            .nav {
+                justify-content: flex-start;
+            }
+        }
+    }
+}

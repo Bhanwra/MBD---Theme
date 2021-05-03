@@ -1,0 +1,29 @@
+{% if section.settings.announcement-toggle %}
+    <div class="container">
+        <p class="announcement-message text-center">{{ section.settings.announcement-message }}</p>
+    </div>
+{% endif %}
+{% schema %}
+    {
+        "name": "Announcement",
+        "class": "announcement",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "text",
+                "id": "announcement-message",
+                "label": "Announcement Message",
+                "default": "Use code 'MBD' to get 10% Off your first purchase.",
+                "info": "Announcement Message to display on the top of the website.",
+                "placeholder": "Announcement"
+            },
+            {
+                "type": "checkbox",
+                "id": "announcement-toggle",
+                "label": "Show Announcement",
+                "default": true,
+                "info": "Check to make the announcement visible."
+            }
+        ]
+    }
+{% endschema %}

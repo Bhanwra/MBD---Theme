@@ -1,0 +1,71 @@
+<div class="owl-carousel">
+    {% for block in section.blocks %}
+        <div class="w-100 p-5 feature feature-fullscreen" style="background-image: url({{ block.settings.featureImage | img_url: 'x1440' }})">
+            <div class="feature-card">
+                <h2 class="feature-title">{{ block.settings.title }}</h2>
+                <p class="feature-subtitle">{{ block.settings.subtitle }}</p>
+                <a href="{{ block.settings.action.url }}" class="feature-action">{{ block.settings.action-text }}</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% schema %}
+    {
+        "name": "Feature Slider",
+        "tag": "section",
+        "class": "feature-slider",
+        "settings": [
+        ],
+        "blocks":[
+            {
+                "type": "featureImages",
+                "name": "Slider",
+                "settings":[
+                    {
+                        "type": "image_picker",
+                        "id": "featureImage",
+                        "label": "Background Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title",
+                        "default": "Title",
+                        "info": "Enter Title",
+                        "placeholder": "Title"
+                    },
+                    {
+                        "type": "text",
+                        "id": "subtitle",
+                        "label": "Subtitle",
+                        "default": "Subtitle",
+                        "info": "Enter Subtitle",
+                        "placeholder": "Subtitle"
+                    },
+                    {
+                        "type": "text",
+                        "id": "action-text",
+                        "label": "Action Text",
+                        "placeholder": "Action Text",
+                        "default": "Action"
+                    },
+                    {
+                        "type": "url",
+                        "id": "action",
+                        "label": "Action Link",
+                        "info": "Select target page"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
+
+{% javascript %}
+    $(document).ready(() => {
+        $(".owl-carousel").owlCarousel({
+            items: 1
+        })
+    })
+{% endjavascript %}

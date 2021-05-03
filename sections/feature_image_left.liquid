@@ -1,0 +1,51 @@
+<div class="row col-md-10 offset-md-1 py-5">
+    <div class="col-12 col-sm-8">
+        {% if section.settings.image %}
+            <div class="image-wrapper" style="background-image: url({{ section.settings.image | img_url: '1280x' }})"></div>
+        {% endif %}
+    </div>
+    <div class="col-12 col-sm-4 text-center d-flex flex-column justify-content-center px-5">
+        <h2 class="h2">{{ section.settings.title }}</h2>
+        <p>{{ section.settings.subtitle }}</p>
+        <a href="{{ section.settings.url }}">{{ section.settings.url-text }}</a>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Feature (Image on Left)",
+        "class": "container-fluid feature-section",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Feature Title",
+                "placeholder": "Enter title"
+            },
+            {
+                "type": "text",
+                "id": "subtitle",
+                "label": "Feature Subtitle",
+                "placeholder": "Enter subtitle"
+            },
+            {
+                "type": "text",
+                "id": "url-text",
+                "label": "Feature Action Text",
+                "info": "Call to action text",
+                "placeholder": "Enter Action Text"
+            },
+            {
+                "type": "url",
+                "id": "url",
+                "label": "Feature Action Link",
+                "info": "Select target link"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Feature Image"
+            }
+        ]
+    }
+{% endschema %}

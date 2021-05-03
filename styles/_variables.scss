@@ -1,0 +1,79 @@
+// _colors_
+$colorDark: #192831;
+$colorPrimary: #C9C2B5;
+$colorLight: ghostwhite;
+
+// _backgrounds_
+$backgroundLight: white;
+$backgroundDark: #D2C3AA;
+$backgroundAccent: #F3F1F0;
+$backgroundAccentTranslucent: #f3f1f0cc;
+
+// _font-size_
+$fontL: 2rem;
+$fontXL: 2.5rem;
+$fontM: 1.5rem;
+$fontR: 1rem;
+$fontS: 0.85rem;
+$fontXS: 0.7rem;
+
+// _letter-spacing_ 
+$letterSpacing: 0.1em;
+
+// __unit__
+$unit: 1rem;
+
+// _classes_
+.bg-light {
+    background-color: $backgroundLight !important;
+}
+.bg-accent {
+    background-color: $backgroundAccent !important;
+}
+
+.bg-cream {
+    background-color: #D1C5B8 !important;
+}
+
+.font-accent {
+    font-size: $fontS;
+    letter-spacing: $letterSpacing;
+    color: $colorDark;
+}
+
+.form-control {
+    border-color: transparent;
+    border-radius: 0;
+    border-bottom: solid thin $colorDark;
+    color: $colorDark;
+    outline: none;
+    
+    &:focus, &:active {
+        border-color: transparent;
+        border-bottom-color: $colorPrimary;
+        box-shadow: none;
+    }
+}
+
+// _HTML_elements_
+a {
+    text-decoration: none;
+    color: $colorDark;
+
+    &:hover {
+        color: $colorPrimary;
+    }
+}
+
+// _extends_
+$transitionDuration: 100ms;
+
+%transition {
+    transition-timing-function: ease-in-out;
+    transition-duration: $transitionDuration;
+}
+
+%transitionLinear {
+    transition-timing-function: linear;
+    transition-duration: $transitionDuration;
+}

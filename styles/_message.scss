@@ -1,0 +1,15 @@
+.message-container {
+    
+    .message-text {
+        padding: (2*$unit);
+        text-align: center;
+        margin: 0;
+        font-size: 1.25rem;
+        font-style: italic;
+
+        &:after,
+        &:before {
+            content: "\"";
+        }
+    }
+}

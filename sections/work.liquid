@@ -1,0 +1,78 @@
+{% assign columns = 12 | divided_by: section.settings.columns %}
+<div class="row col-md-10 offset-md-1">
+    <div class="col-12">
+        {% if section.settings.title %}
+            <p class="h4 mb-3 fancy-heading">{{ section.settings.title }}</p>
+        {% endif %}
+    </div>
+    {% for project in section.blocks %}
+        {% if project.type == "project" %}
+            <a class="col-12 col-sm-{{columns}} box project" href="{{ project.settings.url }}">
+                <div class="box-image-wrapper" style="background-image: url({{ project.settings.thumbnail | img_url: '480x' }})"></div>
+                <div class="box-info p-3 text-center col-8 offset-2">
+                    <h3 class="h2">{{ project.settings.title }}</h3>
+                    <p>{{ project.settings.subtitle }}</p>
+                </div>
+            </a>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% schema %}
+    {
+        "name": "Work",
+        "class": "section",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Section title",
+                "info": "Enter title to be shown on top-left",
+                "placeholder": "Enter title"
+            },
+            {
+                "type": "range",
+                "id": "columns",
+                "min": 2,
+                "max": 6,
+                "step": 1,
+                "label": "Columns per Row",
+                "default": 3
+            }
+        ],
+        "blocks":[
+            {
+                "type": "project",
+                "name": "Project",
+                "settings":[
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title",
+                        "default": "Title",
+                        "placeholder": "Enter title"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "thumbnail",
+                        "label": "Thumbnail"
+                    },
+                    {
+                        "type": "text",
+                        "id": "subtitle",
+                        "label": "Project Subtitle",
+                        "placeholder": "Enter subtitle",
+                        "default": "See Project"
+                    },
+                    {
+                        "type": "url",
+                        "id": "url",
+                        "label": "Project Link",
+                        "info": "Select target link"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

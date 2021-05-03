@@ -1,0 +1,107 @@
+<div class="container-fluid py-3">
+    <div class="row">
+        {% render 'card.project'
+            project_title: "Melrose"
+            project_image: "https://cdn.shopify.com/s/files/1/0513/8081/3974/files/melrose.jpg?v=1605855626"
+            project_url: "melrose"
+            project_span: section.settings.projects-per-row
+        %}
+        {% render 'card.project'
+            project_title: "Admiral"
+            project_image: "https://cdn.shopify.com/s/files/1/0513/8081/3974/files/admiral_7.jpg?v=1617946076"
+            project_url: "admiral"
+            project_span: section.settings.projects-per-row
+        %}
+        {% render 'card.project'
+            project_title: "Glencairn"
+            project_image: "https://cdn.shopify.com/s/files/1/0513/8081/3974/files/glencairn_final.jpg?v=1614962330"
+            project_url: "glencairn-1"
+            project_span: section.settings.projects-per-row
+        %}
+        {% render 'card.project'
+            project_title: "Churchill"
+            project_image: "https://cdn.shopify.com/s/files/1/0513/8081/3974/files/churchill_2_480x.jpg?v=1617945157"
+            project_url: "churchill"
+            project_span: section.settings.projects-per-row
+        %}
+        {% render 'card.project'
+            project_title: "Tkees"
+            project_image: "https://cdn.shopify.com/s/files/1/0513/8081/3974/files/tkees_final.jpg?v=1614964271"
+            project_url: "tkees"
+            project_span: section.settings.projects-per-row
+        %}
+        {% render 'card.project'
+            project_title: "Turks"
+            project_image: "https://cdn.shopify.com/s/files/1/0513/8081/3974/files/turks_final.jpg?v=1614970432"
+            project_url: "turks"
+            project_span: section.settings.projects-per-row
+        %}
+        {% render 'card.project'
+            project_title: "St Clair"
+            project_image: "https://cdn.shopify.com/s/files/1/0513/8081/3974/files/st-clair_1_480x.jpg?v=1617945511"
+            project_url: "st-clair"
+            project_span: section.settings.projects-per-row
+        %}
+        {% render 'card.project'
+            project_title: "Grant Cottage"
+            project_image: "https://cdn.shopify.com/s/files/1/0513/8081/3974/files/grant-cottage_2_480x.jpg?v=1617945620"
+            project_url: "grant-cottage"
+            project_span: section.settings.projects-per-row
+        %}
+        {% render 'card.project'
+            project_title: "Croydon"
+            project_image: "https://cdn.shopify.com/s/files/1/0513/8081/3974/files/croydon_final.jpg?v=1614962389"
+            project_url: "croydon"
+            project_span: section.settings.projects-per-row
+        %}
+        {% render 'card.project'
+            project_title: "Muskoka"
+            project_image: "https://cdn.shopify.com/s/files/1/0513/8081/3974/files/muskoka_final.jpg?v=1614964272"
+            project_url: "muskoka"
+            project_span: section.settings.projects-per-row
+        %}
+        {% render 'card.project'
+            project_title: "Muskoka Pop-up Shack"
+            project_image: "https://cdn.shopify.com/s/files/1/0513/8081/3974/files/muskoka-shack_3.jpg?v=1619160723"
+            project_url: "muskoka-shack"
+            project_span: section.settings.projects-per-row
+        %}
+        {% render 'card.project'
+            project_title: "Uxbridge"
+            project_image: "https://cdn.shopify.com/s/files/1/0513/8081/3974/files/uxbridge_5.jpg?v=1619160890"
+            project_url: "uxbridge"
+            project_span: section.settings.projects-per-row
+        %}
+        {% render 'card.project'
+            project_title: "Walmer"
+            project_image: "https://cdn.shopify.com/s/files/1/0513/8081/3974/files/walmer.jpg?v=1619160930"
+            project_url: "walmer"
+            project_span: section.settings.projects-per-row
+        %}
+        {% render 'card.project'
+            project_title: "Eastwood Castle"
+            project_image: "https://cdn.shopify.com/s/files/1/0513/8081/3974/files/east_castle.jpg?v=1605855625"
+            project_url: "eastwood-castle"
+            project_span: section.settings.projects-per-row
+        %}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Projects",
+        "class": "container-fluid py-3",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "range",
+                "id": "projects-per-row",
+                "min": 1,
+                "max": 4,
+                "step": 1,
+                "label": "Projects per Row",
+                "default": 3
+            }
+        ]
+    }
+{% endschema %}

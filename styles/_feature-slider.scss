@@ -1,0 +1,64 @@
+.feature-slider {
+
+    .feature {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        &.feature-fullscreen {
+            height: 80vh;
+        }
+
+        .feature-card {
+            background: transparent;
+            padding: 1rem;
+            max-width: 480px;
+            margin: 5%;
+            text-align: center;
+            margin-bottom: 8rem;
+
+            .feature-title {
+                font-size: $fontL;
+                margin-bottom: $unit * 0.5;
+                letter-spacing: 0.25em;
+            }
+
+            .feature-subtitle {
+                margin: 0;
+                margin-bottom: $unit * 0.25;
+            }
+
+            .feature-action {
+                text-decoration: none;
+                transition: linear 100ms;
+                position: relative;
+                color: $colorDark;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 0%;
+                    height: 0.05em;
+                    background-color: $colorDark;
+                    transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 150ms;
+                }
+
+                &:hover {
+
+                    &::after {
+                        width: calc(100% - 0.1em);
+                    }
+                }
+            }
+        }
+    }
+
+    .owl-dots {
+        display: none;
+    }
+}

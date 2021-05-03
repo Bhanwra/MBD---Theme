@@ -1,0 +1,38 @@
+{% for product in collections.frontpage.products limit:4 %}
+    <div>
+        <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+        {{ product.price | money }}
+        {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+        <a href="{{ product.url | within: collection }}">
+            <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+        </a>
+    </div>
+{% endfor %}
+
+{% section 'feature' %}
+{% comment %} {% section 'message' %} {% endcomment %}
+
+<div class="container-fluid bg-accent" style="padding: 4em 0;">
+    {% section 'grid' %}
+</div>
+
+<div class="container-fluid pt-5" style="padding-bottom: 4em;">
+    {% section 'work' %}
+    {% comment %} {% section 'highlight' %} {% endcomment %}
+</div>
+
+<div class="container-fluid bg-accent" style="padding: 4em 0;">
+    {% section 'grid-2' %}
+</div>
+
+<div class="container-fluid pt-5">
+    {% section 'grid_v2' %}
+</div>
+
+<div class="container-fluid">
+    {% section 'feature_image_right' %}
+</div>
+{% comment %} 
+<div class="container-fluid bg-accent">
+    {% section 'feature_image_left' %}
+</div> {% endcomment %}

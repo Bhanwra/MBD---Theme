@@ -1,0 +1,14 @@
+.feature-section {
+
+    .image-wrapper {
+        background-size: cover;
+        background-position: center;
+
+        &::after {
+            content: "";
+            display: block;
+            padding-bottom: 50%;
+        }
+    }
+
+}

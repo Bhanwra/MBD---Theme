@@ -1,0 +1,180 @@
+{
+  "current": {
+    "sections": {
+      "announcement": {
+        "type": "announcement",
+        "settings": {
+          "announcement-message": "Use code 'MBD' to get 10% Off your first purchase.",
+          "announcement-toggle": true
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "nav-link-list": "navigation",
+          "logo": "shopify:\/\/shop_images\/logo_v2_e24abcb1-5083-4226-b140-6b92148eacac.png"
+        }
+      },
+      "work": {
+        "type": "work",
+        "settings": {
+          "rows": 3
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      },
+      "feature": {
+        "type": "feature",
+        "blocks": {
+          "fa997c9f-d1a3-4c57-8df4-4c145800fce4": {
+            "type": "featureImages",
+            "settings": {
+              "featureImage": "shopify:\/\/shop_images\/st_clair_v2_cropped_2.jpg",
+              "title": "Card Title",
+              "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat elit et ligula volutpat venenatis. Nulla facilisi. Suspendisse mauris orci, eleifend eu enim vitae, venenatis pellentesque augue.",
+              "action-text": "Our Work",
+              "action": "shopify:\/\/collections"
+            }
+          },
+          "44f9d387-12d7-44bc-b680-049de1f5e4b3": {
+            "type": "featureImages",
+            "settings": {
+              "featureImage": "shopify:\/\/shop_images\/churchill.jpg",
+              "title": "Title",
+              "subtitle": "Subtitle",
+              "action-text": "Action"
+            }
+          }
+        },
+        "block_order": [
+          "fa997c9f-d1a3-4c57-8df4-4c145800fce4",
+          "44f9d387-12d7-44bc-b680-049de1f5e4b3"
+        ],
+        "settings": {}
+      },
+      "message": {
+        "type": "message",
+        "settings": {
+          "show-message": true,
+          "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat elit et ligula volutpat venenatis. Nulla facilisi."
+        }
+      },
+      "highlight": {
+        "type": "highlight",
+        "settings": {
+          "title": "East Castle"
+        }
+      },
+      "grid": {
+        "type": "grid",
+        "blocks": {
+          "a9a988a6-fcfb-47ba-bd16-19c35e790812": {
+            "type": "projects",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/churchill.jpg",
+              "title": "Lorem Ipsum",
+              "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat elit et ligula volutpat venenatis."
+            }
+          },
+          "061c96a0-2578-4a60-a64d-d06dee1a38f6": {
+            "type": "projects",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/glencairn.jpg",
+              "title": "Lorem Ipsum",
+              "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat elit et ligula volutpat venenatis."
+            }
+          },
+          "baeb8f1b-308e-4885-9557-49b12a098a8f": {
+            "type": "projects",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/melrose.jpg",
+              "title": "Lorem Ipsum",
+              "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat elit et ligula volutpat venenatis."
+            }
+          },
+          "041f59a7-688b-4d01-9b12-2ddc9a537ff9": {
+            "type": "projects",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/admiral.jpg",
+              "title": "Lorem Ipsum",
+              "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat elit et ligula volutpat venenatis."
+            }
+          }
+        },
+        "block_order": [
+          "a9a988a6-fcfb-47ba-bd16-19c35e790812",
+          "061c96a0-2578-4a60-a64d-d06dee1a38f6",
+          "baeb8f1b-308e-4885-9557-49b12a098a8f",
+          "041f59a7-688b-4d01-9b12-2ddc9a537ff9"
+        ],
+        "settings": {
+          "title": "",
+          "columns": 2
+        }
+      },
+      "grid_v2": {
+        "type": "grid_v2",
+        "blocks": {
+          "c99652f2-8762-414c-ae14-138e1a81a8c7": {
+            "type": "projects",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/feature_bg_cropped.jpg",
+              "title": "Lorem Ipsum",
+              "subtitle": "See Project"
+            }
+          },
+          "6e6436e4-1c37-4885-8f43-42e508060d23": {
+            "type": "projects",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/glencairn.jpg",
+              "title": "Lorem Ipsum",
+              "subtitle": "See Project"
+            }
+          },
+          "05f94bad-d3e0-4c93-aec4-6085496966c5": {
+            "type": "projects",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/muskoka.png",
+              "title": "Lorem Ipsum",
+              "subtitle": "See Project"
+            }
+          }
+        },
+        "block_order": [
+          "c99652f2-8762-414c-ae14-138e1a81a8c7",
+          "6e6436e4-1c37-4885-8f43-42e508060d23",
+          "05f94bad-d3e0-4c93-aec4-6085496966c5"
+        ],
+        "settings": {
+          "title": "See for yourself ...",
+          "columns": 3
+        }
+      },
+      "feature_image_right": {
+        "type": "feature_image_right",
+        "settings": {
+          "title": "About Us",
+          "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat elit et ligula volutpat venenatis. Nulla facilisi.",
+          "url-text": "Read More",
+          "url": "shopify:\/\/blogs\/news",
+          "image": "shopify:\/\/shop_images\/admiral.jpg"
+        }
+      },
+      "feature_image_left": {
+        "type": "feature_image_left",
+        "settings": {
+          "title": "To The Trade",
+          "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat elit et ligula volutpat venenatis. Nulla facilisi.",
+          "url-text": "Join Now",
+          "image": "shopify:\/\/shop_images\/st_claire.JPG"
+        }
+      }
+    },
+    "content_for_index": []
+  },
+  "presets": {
+    "Default": {}
+  }
+}

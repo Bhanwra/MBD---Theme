@@ -1,0 +1,122 @@
+.mega-menu-toggle:checked ~ .mega-menu-container {
+    pointer-events: all;
+    visibility: visible;
+}
+
+// fading in backdrop
+.mega-menu-toggle:checked ~ .mega-menu-container .mega-menu-backdrop {
+    opacity: 1;
+}
+
+// sliding in title ribbon
+.mega-menu-toggle:checked ~ .mega-menu-container .mega-menu-title {
+    transform: translateX(0);
+}
+
+// sliding in menu ribbon
+.mega-menu-toggle:checked ~ .mega-menu-container .mega-menu {
+    transform: translateX(0);
+}
+
+.mega-menu-container * {
+    @extend %transitionLinear;
+}
+
+.mega-menu-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    pointer-events: none;
+    visibility: hidden;
+
+    .mega-menu-close {
+        position: fixed;
+        right: 0;
+        top: 0;
+        color: #ffffff88;
+        font-size: 5vh;
+        line-height: 1;
+        margin: 1rem;
+        cursor: pointer;
+        z-index: 1;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .mega-menu-backdrop {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        // backdrop-filter: blur(100px);
+        background-color: #00000088;
+        opacity: 0;
+    }
+
+    .mega-menu-title {
+        background-color: $backgroundAccent;
+        color: $colorDark;
+        padding: 2.5rem;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        display: flex;
+        transform: translateX(-100px);
+    }
+
+    .mega-menu {
+        display: flex;
+        flex-direction: column;
+        background-color: $backgroundAccent;
+        height: 100%;
+        padding-top: 2rem;
+        transform: translateX(-200px);
+        min-width: 15rem;
+
+        a {
+            color: $colorDark;
+            padding: 0.5rem 2rem 0.5rem 1rem;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            @extend %transitionLinear;
+
+            &:after {
+                content: "";
+                border-bottom: solid thin #fff3;
+                width: 90%;
+                left: 0;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            &:hover {
+                background-color: $backgroundDark;
+                color: $colorLight;
+            }
+        }
+    }
+}
+
+// tabs w/ mega-menu
+.has-mega-menu {
+    label {
+        cursor: pointer;
+        
+        a {
+            pointer-events: none;
+        }
+    }
+
+}
