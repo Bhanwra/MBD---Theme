@@ -6,6 +6,8 @@
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
     padding: $unit (2.5 * $unit);
+    padding-top: 2.5 * $unit;
+    padding-bottom: 0.5 * $unit;
     background-color: $backgroundLight;
 
     &.header-center {
@@ -22,11 +24,10 @@
     // _children_
     .brand {
         grid-area: brand;
-        padding: 1rem 0;
         text-align: left;
 
         img {
-            width: 480px;
+            width: 360px;
             max-width: 100%;
         }
 
@@ -61,6 +62,7 @@
                 font-size: $fontS;
                 color: $colorDark;
                 font-weight: 400;
+                padding-bottom: 0;
 
                 &:hover {
                     color: $colorPrimary;

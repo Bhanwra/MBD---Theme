@@ -198,6 +198,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 1rem 2.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 0.5rem;
   background-color: white;
 }
 
@@ -217,12 +219,11 @@ body {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: brand;
-  padding: 1rem 0;
   text-align: left;
 }
 
 .header .brand img {
-  width: 480px;
+  width: 360px;
   max-width: 100%;
 }
 
@@ -259,6 +260,7 @@ body {
   font-size: 0.85rem;
   color: #192831;
   font-weight: 400;
+  padding-bottom: 0;
 }
 
 .header .nav .nav-item .nav-link:hover {
@@ -826,29 +828,13 @@ input[type="checkbox"].nav-mobile-toggle:checked ~ .nav-mobile {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #fff0;
+  background-color: rgba(243, 241, 240, 0.95);
 }
 
 .project-card .project-info .project-title {
-  font-size: large;
-  opacity: 0;
-}
-
-.project-card .project-info:hover {
-  background-color: #fffa;
-  -webkit-backdrop-filter: blur(1rem);
-          backdrop-filter: blur(1rem);
-}
-
-.project-card .project-info:hover .project-title {
-  margin-bottom: 3rem;
   font-size: x-large;
   opacity: 1;
   text-decoration: none;
-}
-
-.project-card .project-info:hover .project-title::after {
-  all: unset;
 }
 
 .swipper-toggle:checked + .swiper-container {

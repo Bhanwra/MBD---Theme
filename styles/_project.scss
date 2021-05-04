@@ -51,27 +51,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: #fff0;
+        background-color: transparentize($color: $backgroundAccent, $amount: 0.05);
 
         .project-title {
-            font-size: large;
-            opacity: 0;
-        }
-
-        &:hover {
-            background-color: #fffa;
-            backdrop-filter: blur(1rem);
-
-            .project-title {
-                margin-bottom: 3rem;
-                font-size: x-large;
-                opacity: 1;
-                text-decoration: none;
-
-                &::after {
-                    all: unset;
-                }
-            }
+            font-size: x-large;
+            opacity: 1;
+            text-decoration: none;
         }
     }
 }

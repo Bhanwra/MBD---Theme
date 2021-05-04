@@ -9,7 +9,7 @@
         {% if project.type == "project" %}
             <a class="col-12 col-sm-{{columns}} box project" href="{{ project.settings.url }}">
                 <div class="box-image-wrapper" style="background-image: url({{ project.settings.thumbnail | img_url: '480x' }})"></div>
-                <div class="box-info p-3 text-center col-8 offset-2">
+                <div class="box-info p-3 text-center col-10 offset-1">
                     <h3 class="h2">{{ project.settings.title }}</h3>
                     <p>{{ project.settings.subtitle }}</p>
                 </div>
