@@ -6,7 +6,7 @@ section {
 }
 
 section.coming-soon {
-    background-image: url('https://cdn.shopify.com/s/files/1/0513/8081/3974/files/st-clair_1.jpg?v=1617945511');
+    background-image: url('https://cdn.shopify.com/s/files/1/0513/8081/3974/files/shop.jpg?v=1620156359');
     min-height: 70vh;
     background-size: cover;
     background-position: center;
@@ -21,8 +21,9 @@ section.coming-soon {
         color: black;
         display: flex;
         justify-content: flex-end;
-        align-items: flex-end;
+        align-items: flex-start;
         padding: 1em;
         text-transform: uppercase;
+        margin-top: 3rem;
     }
 }

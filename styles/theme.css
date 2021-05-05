@@ -448,7 +448,7 @@ section .section-heading {
 }
 
 section.coming-soon {
-  background-image: url("https://cdn.shopify.com/s/files/1/0513/8081/3974/files/st-clair_1.jpg?v=1617945511");
+  background-image: url("https://cdn.shopify.com/s/files/1/0513/8081/3974/files/shop.jpg?v=1620156359");
   min-height: 70vh;
   background-size: cover;
   background-position: center;
@@ -468,11 +468,12 @@ section.coming-soon h2 {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding: 1em;
   text-transform: uppercase;
+  margin-top: 3rem;
 }
 
 .mega-menu-toggle:checked ~ .mega-menu-container {
@@ -829,12 +830,18 @@ input[type="checkbox"].nav-mobile-toggle:checked ~ .nav-mobile {
       -ms-flex-align: center;
           align-items: center;
   background-color: rgba(243, 241, 240, 0.95);
+  -webkit-transition: linear 150ms;
+  transition: linear 150ms;
 }
 
 .project-card .project-info .project-title {
   font-size: x-large;
   opacity: 1;
   text-decoration: none;
+}
+
+.project-card:hover .project-info {
+  background-color: rgba(243, 241, 240, 0.5);
 }
 
 .swipper-toggle:checked + .swiper-container {
