@@ -1,14 +1,45 @@
-<div class="owl-carousel">
-    {% for block in section.blocks %}
-        <div class="w-100 p-5 feature feature-fullscreen" style="background-image: url({{ block.settings.featureImage | img_url: 'x1440' }})">
-            <div class="feature-card">
-                <h2 class="feature-title">{{ block.settings.title }}</h2>
-                <p class="feature-subtitle">{{ block.settings.subtitle }}</p>
-                <a href="{{ block.settings.action.url }}" class="feature-action">{{ block.settings.action-text }}</a>
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.js' | asset_url | script_tag }}
+
+<div class="swiper-container swiper-feature feature feature-fullscreen">
+    <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+            <div class="swiper-slide" style="background-image: url({{ block.settings.featureImage | img_url: 'x1440' }})">
+                <div class="feature-card">
+                    <h2 class="feature-title">{{ block.settings.title }}</h2>
+                    <p class="feature-subtitle">{{ block.settings.subtitle }}</p>
+                    <a href="{{ block.settings.action.url }}" class="feature-action">{{ block.settings.action-text }}</a>
+                </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
+    
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 </div>
+
+<script>
+const featureSwiper = new Swiper('.swiper-feature', {
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+    },
+
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
+});
+</script>
 
 {% schema %}
     {
@@ -61,13 +92,3 @@
         ]
     }
 {% endschema %}
-
-{% javascript %}
-    $(document).ready(() => {
-        $(".owl-carousel").owlCarousel({
-            items: 1,
-            loop: true,
-            nav: false
-        })
-    })
-{% endjavascript %}

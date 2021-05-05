@@ -1,9 +1,6 @@
 .header {
-    display: grid;
-    grid-template-areas: 
-        "brand nav nav nav cart"
-        ;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: $unit (2.5 * $unit);
     padding-top: 2.5 * $unit;
@@ -73,6 +70,11 @@
                 }
             }
         }
+
+        label {
+            margin-bottom: 0;
+            line-height: 1;
+        }
     }
 
     .nav-mobile {
@@ -125,23 +127,13 @@
     }
 }
 
-@media only screen and (max-width: 1026px) {
-    .header {
-        padding: (2.5 * $unit) $unit;
+@media only screen and (max-width: 480px) {
+    .header { 
+        padding: 2*$unit $unit;
 
-        &.header-center {
-            grid-template-areas: 
-            "brand brand nav"
-            ;
-            grid-template-columns: repeat(3, 1fr);
-    
-            .nav {
-                justify-content: flex-start;
-
-                label {
-                    margin-bottom: 0;
-                    line-height: 1;
-                }
+        .brand {
+            img {
+                max-width: 280px;
             }
         }
     }
