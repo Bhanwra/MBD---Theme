@@ -127,7 +127,7 @@
 
 @media only screen and (max-width: 1026px) {
     .header {
-        padding: $unit;
+        padding: (2.5 * $unit) $unit;
 
         &.header-center {
             grid-template-areas: 
@@ -137,6 +137,11 @@
     
             .nav {
                 justify-content: flex-start;
+
+                label {
+                    margin-bottom: 0;
+                    line-height: 1;
+                }
             }
         }
     }

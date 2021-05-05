@@ -1,14 +1,16 @@
-<div class="row col-md-10 offset-md-1 py-5">
-    <div class="col-12 col-sm-6 order-sm-2">
-        {% if section.settings.image %}
-            {% comment %} <div class="image-wrapper" style="background-image: url({{ section.settings.image | img_url: '1280x' }})"></div> {% endcomment %}
-            <img class="w-100" src="{{ section.settings.image | img_url: '1280x' }}" />
-        {% endif %}
-    </div>
-    <div class="col-12 col-sm-6 text-left d-flex flex-column justify-content-center px-5">
-        <h2 class="h2">{{ section.settings.title }}</h2>
-        <p>{{ section.settings.subtitle }}</p>
-        <a href="{{ section.settings.url }}">{{ section.settings.url-text }}</a>
+<div class="col-md-10 offset-md-1 py-5">
+    <div class="row">
+        <div class="col-12 col-sm-6 order-sm-2 mb-lg-0 mb-3">
+            {% if section.settings.image %}
+                {% comment %} <div class="image-wrapper" style="background-image: url({{ section.settings.image | img_url: '1280x' }})"></div> {% endcomment %}
+                <img class="w-100" src="{{ section.settings.image | img_url: '1280x' }}" />
+            {% endif %}
+        </div>
+        <div class="col-12 col-sm-6 text-left d-flex flex-column justify-content-center px-3 px-lg-5">
+            <h2 class="h2">{{ section.settings.title }}</h2>
+            <p>{{ section.settings.subtitle }}</p>
+            <a href="{{ section.settings.url }}">{{ section.settings.url-text }}</a>
+        </div>
     </div>
 </div>
 

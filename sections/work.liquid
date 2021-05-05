@@ -1,21 +1,23 @@
 {% assign columns = 12 | divided_by: section.settings.columns %}
-<div class="row col-md-10 offset-md-1">
-    <div class="col-12">
-        {% if section.settings.title %}
-            <p class="h4 mb-3 fancy-heading">{{ section.settings.title }}</p>
-        {% endif %}
+<div class="col-md-10 offset-md-1">
+    <div class="row">
+        <div class="col-12">
+            {% if section.settings.title %}
+                <p class="h4 mb-3 fancy-heading">{{ section.settings.title }}</p>
+            {% endif %}
+        </div>
+        {% for project in section.blocks %}
+            {% if project.type == "project" %}
+                <a class="col-12 col-sm-{{columns}} box project" href="{{ project.settings.url }}">
+                    <div class="box-image-wrapper" style="background-image: url({{ project.settings.thumbnail | img_url: '480x' }})"></div>
+                    <div class="box-info p-3 text-center col-10 offset-1">
+                        <h3 class="h2">{{ project.settings.title }}</h3>
+                        <p>{{ project.settings.subtitle }}</p>
+                    </div>
+                </a>
+            {% endif %}
+        {% endfor %}
     </div>
-    {% for project in section.blocks %}
-        {% if project.type == "project" %}
-            <a class="col-12 col-sm-{{columns}} box project" href="{{ project.settings.url }}">
-                <div class="box-image-wrapper" style="background-image: url({{ project.settings.thumbnail | img_url: '480x' }})"></div>
-                <div class="box-info p-3 text-center col-10 offset-1">
-                    <h3 class="h2">{{ project.settings.title }}</h3>
-                    <p>{{ project.settings.subtitle }}</p>
-                </div>
-            </a>
-        {% endif %}
-    {% endfor %}
 </div>
 
 {% schema %}
